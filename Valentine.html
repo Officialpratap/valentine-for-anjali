@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anjali Rani 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --pink1:#ff8fb1;
+  --pink2:#ff5f8f;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#ffc3a0,#ffafbd,#ff8fb1);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* Floating hearts */
+.heart{
+  position:fixed;
+  animation:float 6s ease-in-out infinite;
+  pointer-events:none;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-25px)}
+}
+
+/* Card */
+.card{
+  width:100%;
+  max-width:420px;
+  background:rgba(255,255,255,.25);
+  backdrop-filter:blur(25px);
+  border-radius:36px;
+  padding:45px 30px;
+  text-align:center;
+  box-shadow:0 30px 60px rgba(0,0,0,.25);
+}
+
+.hidden{
+  display:none;
+}
+
+h1{
+  font-family:'Pacifico',cursive;
+  color:rgb(197, 17, 17);
+  font-size:2.6rem;
+  margin-bottom:18px;
+}
+
+#comment{
+  color:rgb(203, 71, 71);
+  font-size:1.15rem;
+  margin-bottom:30px;
+  min-height:60px;
+  font-weight: bold;
+}
+
+/* Buttons area */
+.btn-area{
+  position:relative;
+  height:140px;
+}
+
+button{
+  padding:16px 40px;
+  border:none;
+  border-radius:50px;
+  font-size:1.15rem;
+  cursor:pointer;
+}
+
+#yesBtn{
+  background:white;
+  color:#852b3c;
+  font-weight:600;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.1)}
+}
+
+/* NO button — visible by default */
+#noBtn{
+  background:#ff4d6d;
+  color:white;
+  position:absolute;
+  top:70px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+/* Page 2 */
+.photo{
+  width:220px;
+  height:220px;
+  margin:25px auto;
+  border-radius:50%;
+  border:8px solid white;
+  overflow:hidden;
+  animation:pop .8s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(0)}
+  to{transform:scale(1)}
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+#finalText{
+  color:rgb(172, 28, 28);
+  font-size:1.15rem;
+  line-height:1.7;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Romantic Music -->
+<audio id="music" loop>
+  <source src="whatsapp-audio-2026-02-09-at-001833_Ck5eWhIX.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+/* Floating hearts */
+const items=["💖","❤️","✨","🌸","🎈"];
+for(let i=0;i<18;i++){
+  const d=document.createElement("div");
+  d.className="heart";
+  d.innerText=items[Math.floor(Math.random()*items.length)];
+  d.style.left=Math.random()*100+"vw";
+  d.style.top=Math.random()*100+"vh";
+  d.style.fontSize=18+Math.random()*22+"px";
+  d.style.animationDelay=Math.random()*5+"s";
+  document.body.appendChild(d);
+}
+</script>
+
+<div class="card" id="page1">
+  <h1>Will you be my Valentine? 💖 <br> Anjali Rani 💕</h1>
+  <div id="comment">My heart has something important to ask you…</div>
+
+  <div class="btn-area">
+    <button id="yesBtn">YES 💍💖</button>
+    <button id="noBtn">No 🥺</button>
+  </div>
+</div>
+
+<div class="card hidden" id="page2">
+  <h1>She Said YES 😍</h1>
+
+  <div class="photo">
+    <img src="WhatsApp Image 2026-02-05 at 18.40.38.jpeg" alt="Us">
+  </div>
+
+  <div id="finalText"></div>
+</div>
+
+<script>
+const noBtn=document.getElementById("noBtn");
+const yesBtn=document.getElementById("yesBtn");
+const comment=document.getElementById("comment");
+const page1=document.getElementById("page1");
+const page2=document.getElementById("page2");
+const music=document.getElementById("music");
+
+const lines=[
+  "Are you 100% sure? 🥺💔",
+  "My heart just skipped a beat… in pain 😭",
+  "Hey! That NO button is not for you 😤",
+  "I can already see us on cute dates 🥹☕",
+  "Someone just broke my imaginary heart 💘💥",
+  "Plot twist: You secretly want to click YES 😏",
+  "The universe says YES… just saying 🌌❤️",
+  "My mom already likes you 😌🙈",
+  "This NO is illegal in Valentine law 🚨💔",
+  "I bought chocolates already 🍫🥺",
+  "Our love story deserves chapter one 📖💕",
+  "Stop teasing me 😭👉👈",
+  "Even the NO button is scared now 😵",
+  "Your future self says YES 😎💘",
+  "This is emotional damage 💔🎮",
+  "Come on… don’t be this cute and cruel 😤❤️",
+  "The YES button is feeling lonely 🥹",
+  "Last warning… butterflies incoming 🦋💥",
+  "Okay I’ll cry now 😭💘",
+  "YES is the only correct answer 😍🔥"
+];
+
+let i=0;
+
+/* NO button movement — ALWAYS visible */
+function moveNo(){
+  const area=document.querySelector(".btn-area");
+  const maxX=area.clientWidth-noBtn.offsetWidth;
+  const maxY=area.clientHeight-noBtn.offsetHeight;
+
+  const x=Math.random()*maxX;
+  const y=Math.random()*maxY;
+
+  noBtn.style.left=x+"px";
+  noBtn.style.top=y+"px";
+
+  comment.innerText=lines[i%lines.length];
+  i++;
+}
+
+noBtn.addEventListener("mouseenter",moveNo);
+noBtn.addEventListener("click",moveNo);
+
+/* YES */
+yesBtn.addEventListener("click",()=>{
+  page1.classList.add("hidden");
+  page2.classList.remove("hidden");
+
+  music.play().catch(()=>{}); // browser-safe
+
+  typeText(
+    "My heart chose you then, and I choose you every single day. You’re my favorite story, today and always. Happy Valentine’s Day, Anjali ❤️🌹💍"
+  );
+});
+
+function typeText(text){
+  const el=document.getElementById("finalText");
+  let p=0;
+  function type(){
+    if(p<text.length){
+      el.innerHTML+=text.charAt(p);
+      p++;
+      setTimeout(type,45);
+    }
+  }
+  type();
+}
+</script>
+
+</body>
+</html>
